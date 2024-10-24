@@ -102,13 +102,54 @@ class heapBuilder:
         if largest != i:
             list1[i], list1[largest] = list1[largest],list1[i]
             self.maxHeapify(list1, n, largest)
+    
+def BSTtoMinHeap(root):
+    list1 = []
+    def inOrder(root,list1):
+        if not root:
+            return None
+        else:
+            inOrder(root.left,list1)
+            list1.append(root.data)
+            inOrder(root.right,list1)
+    inOrder(root,list1)
+
+    newHeap = heapBuilder(list1)
+    return newHeap.createMinHeap()
+
+def BSTtoMaxHeap(root):
+    list1 = []
+    def inOrder(root,list1):
+        if not root:
+            return None
+        else:
+            inOrder(root.left,list1)
+            list1.append(root.data)
+            inOrder(root.right,list1)
+    inOrder(root,list1)
+
+    newHeap = heapBuilder(list1)
+    return newHeap.createMaxHeap()
+
+def printHeap(node, level=0):
+        if node != None:
+            printHeap(node.left, level + 1)
+            print(' ' * 4 * level + '-> ' + str(node.data))
+            printHeap(node.right, level + 1)
+
 
 
 # test1 = [1,23,12,54,43,32,18,79]
 # newBST = BST()
 # for num in test1:
 #     newBST.insert(num)
-# newBST.printTree(newBST.root)
+# # newBST.printTree(newBST.root)
+# heapMinRoot = BSTtoMinHeap(newBST.root)
+# printHeap(heapMinRoot)
+# heapMaxRoot = BSTtoMaxHeap(newBST.root)
+# printHeap(heapMaxRoot)
+
+
 
 # newHeap = heapBuilder(test1)
 # print(newHeap.createMinHeap())
