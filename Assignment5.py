@@ -104,14 +104,14 @@ class heapBuilder:
             self.maxHeapify(list1, n, largest)
 
 
-test1 = [1,23,12,54,43,32,18,79]
+# test1 = [1,23,12,54,43,32,18,79]
 # newBST = BST()
 # for num in test1:
 #     newBST.insert(num)
 # newBST.printTree(newBST.root)
 
-newHeap = heapBuilder(test1)
-print(newHeap.createMinHeap())
+# newHeap = heapBuilder(test1)
+# print(newHeap.createMinHeap())
 # print(newHeap.heapSortMin())
 # print(newHeap.list1)
 # newHeap.heapSortMax()
