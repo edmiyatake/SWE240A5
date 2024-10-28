@@ -140,6 +140,7 @@ def printHeap(node, level=0):
 
 
 # test1 = [1,23,12,54,43,32,18,79]
+# test1 = [100,60,80,77,63]
 # newBST = BST()
 # for num in test1:
 #     newBST.insert(num)
